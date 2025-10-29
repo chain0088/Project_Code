@@ -1,5 +1,6 @@
 import pygame
 
+
 test = pygame.image.load("picture/test.png")
 test = pygame.transform.scale(test,(50,50))
 test_rect = test.get_rect()

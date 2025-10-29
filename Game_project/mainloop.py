@@ -16,6 +16,7 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+
     m.move()
 
     screen.blit(ojd.pixel,ojd.pixel_rect)
