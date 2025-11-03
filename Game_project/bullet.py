@@ -3,6 +3,7 @@ import math
 import object_data as ojd
 import movement as m
 import bullet as bul
+import stronger_enemy as ste
 
 count = 0
 damage = 20
@@ -32,7 +33,7 @@ class Bullet(pygame.sprite.Sprite):
         if bul.count < 5:
             if ojd.test2.get_rect(center = (ojd.test_rect2.x+50,ojd.test_rect2.y+50)).colliderect(self.rect):
                 self.kill()
-                pygame.draw.rect(screen, (255,0,0), (ojd.test_rect2.x,ojd.test_rect2.y,100-(20*bul.count),100-(20*bul.count)))
+                pygame.draw.rect(screen, (255,0,0), (ojd.test_rect2.x,ojd.test_rect2.y,100-(ste.size*bul.count),100-(ste.size*bul.count)))
                 bul.count += 1
                 m.move_object1()
 
