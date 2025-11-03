@@ -24,7 +24,7 @@ while run:                                          #loop หลักของ�
 
     screen.blit(ojd.pixel,ojd.pixel_rect)           #แสดงพื้นหลัง
     screen.blit(ojd.test2,ojd.test_rect2)           #แสดงศัตรูออกทางหน้าจอเกม(ยังไม่ได้ใส่รูปศัตรูจริง)
-    ste.Str_enemy()
+    # ste.Str_enemy()
     # pygame.draw.rect(screen, (125,125,125), (ojd.test_rect2.x,ojd.test_rect2.y+120,bul.max_hp,20))
     # pygame.draw.rect(screen, (0,255,0), (ojd.test_rect2.x,ojd.test_rect2.y+120,bul.max_hp-(bul.damage*bul.count),20))
     bul.bullets.draw(screen)
