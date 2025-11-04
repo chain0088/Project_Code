@@ -1,5 +1,4 @@
 import pygame
-import math
 import object_data as ojd
 import movement as m
 import bullet as bul
@@ -22,18 +21,20 @@ class Bullet(pygame.sprite.Sprite):
         self.rect.center = (400,300)
         self.bullet_speed = 10
 
-        dis_x, dis_y = target_pos[0] - player_x, target_pos[1] - player_y
-        distance = math.hypot(dis_x, dis_y)
-        self.bullet_speed = ((dis_x / distance) * self.bullet_speed, (dis_y / distance) * self.bullet_speed)
+        dis_x = target_pos[0] - player_x
+        dis_y = target_pos[1] - player_y
+        distance = ((dis_x**2) + (dis_y**2))**(1/2)
+        self.bullet_speed_x = (dis_x / distance) * self.bullet_speed
+        self.bullet_speed_y = (dis_y / distance) * self.bullet_speed
 
     def update(self):
-        self.rect.x += self.bullet_speed[0]
-        self.rect.y += self.bullet_speed[1]
+        self.rect.x += self.bullet_speed_x
+        self.rect.y += self.bullet_speed_y
 
         if bul.count < 5:
-            if ojd.test2.get_rect(center = (ojd.test_rect2.x+50,ojd.test_rect2.y+50)).colliderect(self.rect):
+            if ojd.test2.get_rect(center = (ojd.test_rect2.x+50, ojd.test_rect2.y+50)).colliderect(self.rect):
                 self.kill()
-                pygame.draw.rect(screen, (255,0,0), (ojd.test_rect2.x,ojd.test_rect2.y,100-(ste.size*bul.count),100-(ste.size*bul.count)))
+                pygame.draw.rect(screen, (255,0,0), (ojd.test_rect2.x, ojd.test_rect2.y, 100-(ste.size*bul.count), 100-(ste.size*bul.count)))
                 bul.count += 1
                 m.move_object1()
 
