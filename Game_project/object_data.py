@@ -3,8 +3,7 @@ import pygame
 #กำหนดวัตถุต่างๆภายในเกม
 
 #ตัวละครผู้เล่น
-test = pygame.image.load("picture/test.png")
-test = pygame.transform.scale(test,(50,50))
+test = pygame.image.load("Hero/Stand.png")
 test_rect = test.get_rect()
 
 #ตัวละครศัตรู
@@ -14,7 +13,7 @@ test_rect2 = test2.get_rect()
 
 #ภาพพื้นหลัง
 pixel = pygame.image.load("picture/pixel.jpg")
-pixel = pygame.transform.scale(pixel,(1200,1000))
+pixel = pygame.transform.scale(pixel,(1600,1400))
 pixel_rect = pixel.get_rect()
 
 #กำหนดตำแหน่งเริ่มต้น
