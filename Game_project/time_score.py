@@ -1,17 +1,17 @@
 import pygame
 import time
 import bullet as bul
+import object_data as ojd
 
-#ตัวจับเวลา
+#ตัวจับเวลา และตัวนับคะแนน
 
-screen = pygame.display.set_mode((800, 600))
+
 start_time = time.time()
-pass_time = 0
 
-def timer():
+def timer_score():
     pass_time = time.time() - start_time            #ตัวคำนวณเวลาที่จะใช้แสดงภายในเกม
     font = pygame.font.SysFont("arial",30)          
-    time_text = font.render(f"Time {(round(pass_time))//60}:{(round(pass_time))%60}", True, (255,255,255)) #แสดงเวลาออกทางหน้าจอ
-    screen.blit(time_text,(10,10))
-    score = font.render(f"Score {int(bul.count)}", True, (255,255,255))
-    screen.blit(score,(10,40))
+    time_text = font.render(f"Time {(int(pass_time))//60}:{(int(pass_time))%60}", True, (255,255,255)) #แสดงเวลาออกทางหน้าจอ
+    ojd.screen.blit(time_text,(10,10))
+    score = font.render(f"Score {int(ojd.count)}", True, (255,255,255))
+    ojd.screen.blit(score,(10,40))
