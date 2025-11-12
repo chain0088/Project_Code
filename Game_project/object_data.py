@@ -25,14 +25,13 @@ pixel_rect.center = (400,300)
 screen = pygame.display.set_mode((800, 600))
 
 # enemy
-size = 2
+down_size_enemy = 5
 enemy_speed = 1
+boss_hp = 1
 
 # player
 fram_animation = 0
 
 #  bullet
 count = 0
-damage = 5
-damage_time = 0
 bullet_delay_time = 0
