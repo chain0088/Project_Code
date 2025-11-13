@@ -5,7 +5,7 @@ import time_score as ts
 import bullet as bul
 import stronger_enemy as ste
 import movemonster as mmr
-import Music as mc
+# import Music as mc
 
 pygame.init()
 pygame.display.set_caption("Game name")
@@ -27,12 +27,12 @@ while run:                                          #loop หลักของ�
 
     screen.blit(ojd.pixel,ojd.pixel_rect)           #แสดงพื้นหลัง
     screen.blit(ojd.test2,ojd.test_rect2)           #แสดงศัตรูออกทางหน้าจอเกม(ยังไม่ได้ใส่รูปศัตรูจริง)
+    bul.bullets.draw(screen)
 
     ts.timer_score()                                      #ตัวจับเวลา
     ste.Str_enemy()
-    bul.bullets.draw(screen)
     m.move()
-    mmr.move_monter()                              #การเคลื่อนที่monstersssssss
+    mmr.move_monter()                              #การเคลื่อนที่monsters
 
     ojd.bullet_delay_time += 1
     if ojd.bullet_delay_time % (60 - (ojd.count//2)) == 0:

@@ -2,14 +2,7 @@ import pygame
 import object_data as ojd
 import movement as m
 import bullet as bul
-import stronger_enemy as ste
 
-count = 0
-damage = 20
-damage_time = 0
-max_hp = 100
-bullet_delay_time = 0
-screen = pygame.display.set_mode((800, 600))
 bullets = pygame.sprite.Group()
 
 class Bullet(pygame.sprite.Sprite):
@@ -31,16 +24,23 @@ class Bullet(pygame.sprite.Sprite):
         self.rect.x += self.bullet_speed_x
         self.rect.y += self.bullet_speed_y
 
-        if bul.count < 5:
-            if ojd.test2.get_rect(center = (ojd.test_rect2.x+50, ojd.test_rect2.y+50)).colliderect(self.rect):
-                self.kill()
-                pygame.draw.rect(screen, (255,0,0), (ojd.test_rect2.x, ojd.test_rect2.y, 100-(ste.size*bul.count), 100-(ste.size*bul.count)))
-                bul.count += 1
-                m.move_object1()
+        if (ojd.count < 10) and ojd.test2.get_rect(center = (ojd.test_rect2.x+50, ojd.test_rect2.y+50)).colliderect(self.rect):
+            self.kill()
+            pygame.draw.rect(ojd.screen, (255,0,0), (ojd.test_rect2.x, ojd.test_rect2.y, 100-(ojd.down_size_enemy*ojd.count), 100-(ojd.down_size_enemy*ojd.count)))
+            ojd.count += 1
+            ojd.enemy_speed += 0.1
+            m.move_object1()
 
-        elif bul.count >= 5:
-            ojd.test2.fill(0)
-            bul.max_hp = 0
+        if (ojd.count >= 10) and ojd.test2.get_rect(center = (ojd.test_rect2.x+50, ojd.test_rect2.y+50)).colliderect(self.rect):
+            self.kill()
+            pygame.draw.rect(ojd.screen, (255,0,0), (ojd.test_rect2.x, ojd.test_rect2.y, 50, 50))
+            ojd.boss_hp -= 0.5
 
-        if not screen.get_rect().colliderect(self.rect):
+        if ojd.boss_hp == 0:
+            ojd.count += 1
+            ojd.enemy_speed += 0.05
+            ojd.boss_hp = 1
+            m.move_object1()
+
+        if not ojd.screen.get_rect().colliderect(self.rect):
             self.kill()
