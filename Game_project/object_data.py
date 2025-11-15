@@ -7,7 +7,7 @@ test = pygame.image.load("Hero/Stand.png")
 test_rect = test.get_rect()
 
 #ตัวละครศัตรู
-test2 = pygame.image.load("picture/test copy.png")
+test2 = pygame.image.load("picture/Boss.gif")
 test2 = pygame.transform.scale(test2,(100,100))
 test_rect2 = test2.get_rect()
 
