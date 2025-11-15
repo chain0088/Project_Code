@@ -7,7 +7,7 @@ test = pygame.image.load("Hero/Stand.png")
 test_rect = test.get_rect()
 
 #ตัวละครศัตรู
-test2 = pygame.image.load("picture/Boss.gif")
+test2 = pygame.image.load("picture/test copy.png")
 test2 = pygame.transform.scale(test2,(100,100))
 test_rect2 = test2.get_rect()
 
@@ -21,13 +21,15 @@ test_rect.center = (400,300)
 test_rect2.center = (0,0)
 pixel_rect.center = (400,300)
 
-
+# ค่าตั้งต้นสำหรับการแสดงผล
 screen = pygame.display.set_mode((800, 600))
+mouse_x = 0
+mouse_y = 0
+start_game = 0
 
 # enemy
-down_size_enemy = 5
+size = 2
 enemy_speed = 1
-boss_hp = 1
 
 # player
 fram_animation = 0
