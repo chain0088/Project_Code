@@ -7,7 +7,7 @@ fram_anima = 0
 def player_anima(key):
 
     if not any(key) or (not key[pygame.K_w] and not key[pygame.K_a] and not key[pygame.K_s] and not key[pygame.K_d]):
-        ojd.screen.blit(ojd.test,ojd.test_rect)
+        ojd.screen.blit(ojd.player,ojd.player_rect)
 
     if key[pygame.K_w]:
         p_anima_up = []
@@ -20,8 +20,8 @@ def player_anima(key):
         p_anima_up.append(pygame.image.load("Hero/Top/T7.png"))
         p_anima_up.append(pygame.image.load("Hero/Top/T8.png"))
         p_anima_up.append(pygame.image.load("Hero/Top/T9.png"))
-        ojd.screen.blit(p_anima_up[int(ojd.fram_animation)],ojd.test_rect)
-        ojd.fram_animation += 0.1
+        ojd.screen.blit(p_anima_up[int(ojd.fram_animation)],ojd.player_rect)
+        ojd.fram_animation += 0.5
 
     elif key[pygame.K_a]:
         p_anima_left = []
@@ -34,8 +34,8 @@ def player_anima(key):
         p_anima_left.append(pygame.image.load("Hero/Left/L7.png"))
         p_anima_left.append(pygame.image.load("Hero/Left/L8.png"))
         p_anima_left.append(pygame.image.load("Hero/Left/L9.png"))
-        ojd.screen.blit(p_anima_left[int(ojd.fram_animation)],ojd.test_rect)
-        ojd.fram_animation += 0.1
+        ojd.screen.blit(p_anima_left[int(ojd.fram_animation)],ojd.player_rect)
+        ojd.fram_animation += 0.5
 
     elif key[pygame.K_s]:
         p_anima_down = []
@@ -48,8 +48,8 @@ def player_anima(key):
         p_anima_down.append(pygame.image.load("Hero/Down/D7.png"))
         p_anima_down.append(pygame.image.load("Hero/Down/D8.png"))
         p_anima_down.append(pygame.image.load("Hero/Down/D9.png"))
-        ojd.screen.blit(p_anima_down[int(ojd.fram_animation)],ojd.test_rect)
-        ojd.fram_animation += 0.1
+        ojd.screen.blit(p_anima_down[int(ojd.fram_animation)],ojd.player_rect)
+        ojd.fram_animation += 0.5
 
     elif key[pygame.K_d]:
         p_anima_right = []
@@ -62,9 +62,9 @@ def player_anima(key):
         p_anima_right.append(pygame.image.load("Hero/Right/R7.png"))
         p_anima_right.append(pygame.image.load("Hero/Right/R8.png"))
         p_anima_right.append(pygame.image.load("Hero/Right/R9.png"))
-        ojd.screen.blit(p_anima_right[int(ojd.fram_animation)],ojd.test_rect)
-        ojd.fram_animation += 0.1
+        ojd.screen.blit(p_anima_right[int(ojd.fram_animation)],ojd.player_rect)
+        ojd.fram_animation += 0.5
 
-    if ojd.fram_animation >= 2 :
+    if ojd.fram_animation >= 9 :
         ojd.fram_animation = 0
 

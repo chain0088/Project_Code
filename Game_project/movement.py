@@ -1,9 +1,7 @@
 import pygame
 import random
 import object_data as ojd
-import player_animation2 as pa
-
-screen = pygame.display.set_mode((800, 600))
+import player_animation as pa
 
 def move():                                        #การเคลื่อนที่
     key = pygame.key.get_pressed()                 #ตรวจจับการกดปุ่มบนคีบอร์ด
@@ -17,25 +15,25 @@ def move():                                        #การเคลื่อ�
     pa.player_anima(key)
 
     if key[pygame.K_w] and (ojd.pixel_rect.y < 0):
-        ojd.test_rect2.y += En_S_when_player_move
+        ojd.enemy_rect.y += En_S_when_player_move
         ojd.pixel_rect.y += BG_S_when_player_move
 
     if key[pygame.K_a] and (ojd.pixel_rect.x < 0):
-        ojd.test_rect2.x += En_S_when_player_move
+        ojd.enemy_rect.x += En_S_when_player_move
         ojd.pixel_rect.x += BG_S_when_player_move
 
     if key[pygame.K_s] and (ojd.pixel_rect.y > -800):
-        ojd.test_rect2.y -= En_S_when_player_move
+        ojd.enemy_rect.y -= En_S_when_player_move
         ojd.pixel_rect.y -= BG_S_when_player_move
 
     if key[pygame.K_d] and (ojd.pixel_rect.x > -800):
-        ojd.test_rect2.x -= En_S_when_player_move
+        ojd.enemy_rect.x -= En_S_when_player_move
         ojd.pixel_rect.x -= BG_S_when_player_move
 
-def move_object1():                                 #ศัตรูสุ่มไปตำแหน่งต่างๆ
+def enemy_spawn():                                 #ศัตรูสุ่มไปตำแหน่งต่างๆ
     if ojd.count%2 == 0:
-        ojd.test_rect2.x = random.randint(-400,0)
-        ojd.test_rect2.y = random.randint(-400,0)
+        ojd.enemy_rect.x = random.randint(-150,0)
+        ojd.enemy_rect.y = random.randint(-150,0)
     else:
-        ojd.test_rect2.x = random.randint(800,1200)
-        ojd.test_rect2.y = random.randint(600,1000)
+        ojd.enemy_rect.x = random.randint(800,900)
+        ojd.enemy_rect.y = random.randint(600,700)
