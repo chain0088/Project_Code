@@ -1,7 +1,6 @@
 import pygame
 import object_data as ojd
 import movement as m
-import bullet as bul
 
 bullets = pygame.sprite.Group()
 
@@ -43,4 +42,5 @@ class Bullet(pygame.sprite.Sprite):
             m.enemy_spawn()
 
         if not ojd.screen.get_rect().colliderect(self.rect):
+
             self.kill()
