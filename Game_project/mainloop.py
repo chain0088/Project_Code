@@ -12,7 +12,7 @@ import restart as R
 import Music as M
 
 pygame.init()
-pygame.display.set_caption("Game name")
+pygame.display.set_caption("The Crimson")
 screen = pygame.display.set_mode((800, 600))
 
 fps = 60

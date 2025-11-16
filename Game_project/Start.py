@@ -12,7 +12,7 @@ def menu():
     # arial 54ugcrbdbernadetteotf
     sys_font1 =  pygame.font.SysFont("54ugcrbdbernadetteotf",60)
     sys_font2 = pygame.font.SysFont("54ugcrbdbernadetteotf",50)
-    Game_caption = sys_font1.render("Game Name", True, white)
+    Game_caption = sys_font1.render("The Crimson", True, white)
     start = sys_font2.render("Start", True, white)
     quit = sys_font2.render("Quit", True, white)
 
