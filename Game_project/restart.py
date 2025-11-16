@@ -1,4 +1,3 @@
-import pygame
 import object_data as ojd
 
 def restart():
@@ -18,4 +17,5 @@ def restart():
     ojd.fram_animation = 0
 
     ojd.count = 0
+
     ojd.bullet_delay_time = 0
