@@ -1,5 +1,4 @@
 import pygame
-import movement as m
 import object_data as ojd
 
 fram_anima = 0
@@ -67,4 +66,5 @@ def player_anima(key):
 
     if ojd.fram_animation >= 9 :
         ojd.fram_animation = 0
+
 
