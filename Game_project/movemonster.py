@@ -1,5 +1,3 @@
-import pygame
-import math
 import object_data as ojd
 
 def move_monter():
