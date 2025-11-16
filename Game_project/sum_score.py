@@ -1,6 +1,5 @@
 import pygame
 import object_data as ojd
-import time_score as ts
 
 def sum_score():
     ojd.screen.fill((0,0,0))
@@ -16,3 +15,4 @@ def sum_score():
     ojd.screen.blit(sum_time_text,(310,200))
     ojd.screen.blit(sum_score,(320,300))
     ojd.screen.blit(restart,(300,450))
+
