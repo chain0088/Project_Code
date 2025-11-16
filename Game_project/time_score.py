@@ -1,6 +1,5 @@
 import pygame
 import time
-import bullet as bul
 import object_data as ojd
 
 #ตัวจับเวลา และตัวนับคะแนน
@@ -12,3 +11,4 @@ def timer_score():
     score = font.render(f"Score {int(ojd.count)}", True, (255,255,255))
     ojd.screen.blit(time_text,(10,10))
     ojd.screen.blit(score,(10,40))
+
