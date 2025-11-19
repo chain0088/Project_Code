@@ -1,8 +1,6 @@
 import pygame
 import object_data as ojd
 
-fram_anima = 0
-
 def player_anima(key):
 
     if not any(key) or (not key[pygame.K_w] and not key[pygame.K_a] and not key[pygame.K_s] and not key[pygame.K_d]):
@@ -66,5 +64,6 @@ def player_anima(key):
 
     if ojd.fram_animation >= 9 :
         ojd.fram_animation = 0
+
 
 
